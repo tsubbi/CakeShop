@@ -31,10 +31,6 @@
         {
             "menu_name": "Cup Cake",
             "img_url": "./images/cakes/cupcake.png"
-        },
-        {
-            "menu_name": "Macaron",
-            "img_url": "./images/cakes/macarons.png"
         }
     ]
 }
