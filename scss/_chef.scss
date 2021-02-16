@@ -2,26 +2,32 @@
     padding: 100px 0 ;
     margin: 5vh 0;
     display: grid;
-    grid-template-columns: 5vw clamp(3vw, 3.5vw, 4vw) clamp(150px, 30vw, 400px) auto;
+    grid-template-columns: 5vw clamp(3vw, 3.5vw, 4vw) clamp(150px, 30vw, 350px) clamp(3vw, 3.5vw, 4vw) auto;
     grid-template-rows: 6vw auto 6vw;
 
     &-bg {
         grid-row: 1/-1;
         grid-column: 1/-1;
         display: grid;
-        grid-template-columns: 5vw clamp(3vw, 3.5vw, 4vw) clamp(150px, 30vw, 400px) auto 5vw;
+        grid-template-columns: 5vw clamp(3vw, 3.5vw, 4vw) clamp(150px, 30vw, 350px) clamp(3vw, 3.5vw, 4vw) auto 5vw;
         grid-template-rows: 6vw auto 6vw;
 
         .border-top {
             @extend %borderStyle;
             grid-row: 1/2;
-            clip-path: polygon(100% 100%, 100% 0%, 0% 0%, 0 50%, 90% 50%, 90% 100%);
+            clip-path: polygon(100% 50%, 100% 0%, 0% 0%, 0 50%);
         }
 
         .border-bottom {
             @extend %borderStyle;
-            grid-row: 3/-2;
-            clip-path: polygon(90% 0, 100% 0, 100% 100%, 0 100%, 0 50%, 90% 50%);
+            grid-row: 3/-1;
+            clip-path: polygon(100% 100%, 0 100%, 0 50%, 100% 50%);
+        }
+
+        .border-right {
+            @extend %borderStyle;
+            grid-row: 1/-1;
+            grid-column: 4;
         }
 
         .chef-bg {
@@ -30,7 +36,7 @@
             background: getColor(accentLightColor);
             box-shadow: 4px 0 10px rgba(0, 0, 0, 0.2), 0 6px 20px 0 rgba(0, 0, 0, 0.19);
             display: grid;
-            grid-template-columns: 5vw clamp(3vw, 3.5vw, 4vw) clamp(150px, 30vw, 400px) auto;
+            grid-template-columns: 5vw clamp(3vw, 3.5vw, 45px) clamp(150px, 30vw, 400px) auto;
             z-index: 2;
             place-items: center;
                     
@@ -46,21 +52,22 @@
                 display: flex;
                 flex-wrap: wrap;
                 justify-content: space-evenly;
+                width: 100%;
                 
                 .box {
                     grid-column: 4/-1;
                     background: white;
                     padding: 20px;
-                    width: 250px;
                     margin: 15px;
+                    flex: 0 1 250px;
                 }
             }
         }
 
-        .red-border {
+        .border-left {
+            @extend %borderStyle;
             grid-column: 2/3;
             grid-row: 1/-1;
-            background-color: getColor(accentRedColor);
             z-index: 3;
         }
     }
