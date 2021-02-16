@@ -3,8 +3,9 @@
     <head>
         <meta charset="UTF-8">
         <meta name="viewport" content="width=device-width, initial-scale=1.0">
-        <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
-        <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/1.19.0/jquery.gsap.min.js"></script>
+        <script src="https://code.jquery.com/jquery-3.5.1.min.js"></script>
+        <script src="https://cdnjs.cloudflare.com/ajax/libs/OwlCarousel2/2.3.4/owl.carousel.min.js"></script>
+        <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/OwlCarousel2/2.3.4/assets/owl.carousel.min.css">
         <title>Cake</title>
         <link rel="stylesheet" href="./css/main.css">
         <script src="./js/jsonFetcher.js"></script>
@@ -18,12 +19,7 @@
             <a href="#" class="logo">Cake<span>❤</span></a>
             <div class="menuToggle"></div>
             <ul class="navigation">
-                <li><a href="#banner">Home</a></li>
-                <li><a href="#about">About</a></li>
-                <li><a href="#menu">Menu</a></li>
-                <li><a href="#chefs">Chefs</a></li>
-                <li><a href="#reviews">Reviews</a></li>
-                <li><a href="#contact">Contact</a></li>
+                <!-- This section is created by js: navitaion.js -->
             </ul>
         </header>
 
@@ -69,7 +65,9 @@
                 1. Change this section to disney style load section
                 // 2. This section will be populated by program
              -->
-            <div class="menu-content"></div>
+            <div class="menu-content">
+                <!-- The content in here is created by js and load data from json file -->
+            </div>
 
             <div class="title">
                 <a href="#" class="button">View All</a>
@@ -92,7 +90,9 @@
                         <p>Porro atque aut praesentium sed harum deleniti similique necessitatibus!</p>
                     </div> 
                     
-                    <div class="portfiles"></div>
+                    <div class="portfiles">
+                        <!-- The content in here is created by js and load data from json file -->
+                    </div>
                 </div>
 
                 <div class="red-border"></div>            
@@ -105,13 +105,14 @@
             2. need to survey more designs to finalaize the looks
         -->
         <section id="reviews" class="reviews">
-            <div class="overlay"></div>
             <div class="title white">
                 <h2 class="titleText"><span>R</span>eviews</h2>
                 <p>Porro atque aut praesentium sed harum deleniti similique necessitatibus!</p>
             </div>
 
-            <div class="reviews-content"></div>
+            <div class="reviews-content">
+                <!-- The content in here is created by js and load data from json file -->
+            </div>
         </section>
 
         <!-- Contact -->
@@ -123,31 +124,7 @@
             </div>
 
             <form action="" class="contact-form">
-                <div class="lines"></div>
-                <h3>Order Form</h3>
-                <div class="singleForm">
-                    <input type="text" name="name" required>
-                    <label for="name">Name</label>
-                </div>
-
-                <div class="singleForm">
-                    <input type="text" name="phone" required>
-                    <label for="phone">Phone</label>
-                </div>
-
-                <div class="singleForm">
-                    <input type="email" name="email" required>
-                    <label for="email">Email</label>
-                </div>
-
-                <div class="singleForm">
-                    <textarea type="text" name="message" required></textarea>
-                    <label for="message">Message</label>
-                </div>
-
-                <div class="submit-button">
-                    <input type="submit" value="Send">
-                </div>
+                <!-- The content in here is created by js: form.js -->
             </form>
         </section>
 
@@ -165,6 +142,7 @@
     </template>
 
     <!-- controls the toggle menu and nav bar -->
+    <script src="./js/navigation.js"></script>
     <script src="./js/main.js"></script>
     <!-- menu lists -->
     <script>
@@ -218,6 +196,7 @@
         fetchJson("./json/reviews.json", "reviews", function(reviewList) {
             if (reviewList.length > 0) {
                 let reviewContent = document.querySelector(".reviews-content");
+                reviewContent.classList.add("owl-carousel");
                 let template = document.querySelector("template");
                 
                 reviewList.forEach(review => {
@@ -235,7 +214,29 @@
 
                     reviewContent.append(clone)
                 });
+
+                $(".reviews-content").owlCarousel({
+                    responsive: {
+                        0: {
+                            items: 1,
+                            nav: false
+                        },
+                        600: {
+                            items: 2,
+                            nav: false
+                        },
+                        1000: {
+                            items: 3,
+                            nav: false
+                        }
+                    },
+                    autoplay: true,
+                    loop: true,
+                    autoplayTimeout: 2000,
+                    autoplayHoverPause: true
+                });
             }
         });
     </script>
+    <script src="./js/form.js"></script>
 </html>

@@ -125,6 +125,7 @@ header .navigation li {
 
 header .navigation li a {
   text-decoration: none;
+  text-transform: capitalize;
   font-weight: 300;
   color: #ffffff;
 }
@@ -256,6 +257,9 @@ header.sticky .navigation li a:hover {
   }
   .row .col50 {
     width: 100%;
+  }
+  .row .col50 h2 {
+    text-align: center;
   }
   .row .col50 .imgBox {
     height: 30vh;
@@ -474,7 +478,6 @@ header.sticky .navigation li a:hover {
 }
 
 .reviews-content .box {
-  width: 340px;
   margin: 20px;
   padding: 40px;
   background: #ffffff;
@@ -532,6 +535,28 @@ header.sticky .navigation li a:hover {
   color: #777777;
   font-weight: 300;
   content: "\2014 \2009";
+}
+
+.owl-dots {
+  text-align: center;
+  margin-top: 20px;
+}
+
+.owl-dot {
+  height: 10px;
+  width: 35px;
+  border-radius: 25px;
+  border: 2px solid #fff5ee !important;
+  cursor: pointer;
+  margin: 0 3px;
+  outline: none;
+  -webkit-transition: all 300ms ease;
+  transition: all 300ms ease;
+}
+
+.owl-dot:hover,
+.owl-dot.active {
+  background: #fff5ee !important;
 }
 
 @media (max-width: 991px) {
@@ -628,6 +653,7 @@ header.sticky .navigation li a:hover {
   font-size: 15px;
   -webkit-transition: 500ms;
   transition: 500ms;
+  text-transform: capitalize;
 }
 
 .contact-form .submit-button input[type="submit"] {
@@ -641,6 +667,9 @@ header.sticky .navigation li a:hover {
     padding: 35px 40px;
     margin-top: 20px;
     margin-bottom: 30px;
+  }
+  .contact-form .lines {
+    margin-top: -35px;
   }
 }
 

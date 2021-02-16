@@ -80,6 +80,7 @@
                 color: getColor(defaultGrayColor);
                 font-size: 15px;
                 transition: 500ms;
+                text-transform: capitalize;
             }
         }
 
@@ -98,6 +99,10 @@
             padding: 35px 40px;
             margin-top: 20px;
             margin-bottom: 30px;
+
+            .lines {
+                margin-top: -35px;
+            }
         }
     }
 }

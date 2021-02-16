@@ -14,15 +14,15 @@
         },
         {
             "menu_name": "Chocolate Cake",
-            "img_url": "./images/menu4.jpg"
+            "img_url": "./images/cakes/chocolate_fudge_cake.png"
         },
         {
-            "menu_name": "Tea Cake",
-            "img_url": "./images/menu5.jpg"
+            "menu_name": "Matcha Cake",
+            "img_url": "./images/cakes/matcha.png"
         },
         {
-            "menu_name": "Nut Cake",
-            "img_url": "./images/menu6.jpg"
+            "menu_name": "Walnut Cake",
+            "img_url": "./images/cakes/walnut.png"
         },
         {
             "menu_name": "Jar Cake",

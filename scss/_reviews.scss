@@ -13,7 +13,6 @@
         @include content;
 
         .box {
-            width: 340px;
             margin: 20px;
             padding: 40px;
             background: getColor(primaryLightColor);
@@ -71,6 +70,27 @@
             }
         }
     }
+}
+
+.owl-dots {
+    text-align: center;
+    margin-top: 20px;
+}
+
+.owl-dot {
+    height: 10px;
+    width: 35px;
+    border-radius: 25px;
+    border: 2px solid getColor(accentLightColor) !important;
+    cursor: pointer;
+    margin: 0 3px;
+    outline: none;
+    transition: all 300ms ease;
+}
+
+.owl-dot:hover,
+.owl-dot.active {
+    background: getColor(accentLightColor) !important;
 }
 
 @media (max-width: 991px) {
